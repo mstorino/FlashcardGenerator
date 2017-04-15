@@ -8,7 +8,8 @@ var ClozeCard = function(fullText, partialText) {
 		//check to make sure that the partialText is in the fullText, if it is display the card, if not throw an error
 	  	var checkText = fullText.includes(partialText);
 		if (checkText === true){
-			var newText = fullText.replace(partialText, '...')
+
+			var newText = fullText.replace(/\partialText\/g, '...')
 		  	console.log("Question (fill in the blank): " + newText);
 			} else {
 				console.log('Oops, this part: ' + partialText + ' is not in the sentence.');
@@ -23,3 +24,10 @@ var ClozeCard = function(fullText, partialText) {
 }
 
 module.exports = ClozeCard;
+
+
+
+// USE THIS FROM BRIAN
+    // var testVar = partialText;
+    
+    // string.replace(/ReGeX + testVar + ReGeX/, "...")
